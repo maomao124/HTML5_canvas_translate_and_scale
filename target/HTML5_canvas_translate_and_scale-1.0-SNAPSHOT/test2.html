@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+
+<!--
+Project name(项目名称)：HTML5_canvas_translate_and_scale
+  File name(文件名): test2
+  Authors(作者）: mao
+  Author QQ：1296193245
+  GitHub：https://github.com/maomao124/
+  Date(创建日期)： 2022/4/4
+  Time(创建时间)： 22:45
+  Description(描述)： 无
+-->
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="animate.css">
+    <style>
+        canvas {
+            border: 2px solid black;
+        }
+
+        .p {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+    </style>
+</head>
+<body>
+
+<div class="p">
+    <canvas class="animated bounceInRight" id="canvas" width="300" height="300">
+        浏览器不支持画布功能
+    </canvas>
+</div>
+
+<script>
+    var canvas = document.getElementById("canvas");
+    var ctx = canvas.getContext("2d");
+
+    ctx.translate(150, 130);
+    for (var i = 0; i < 6; i++)
+    {
+        ctx.rotate(Math.PI * 2 / 6);
+        ctx.beginPath();
+        ctx.arc(50, 50, 50, 0, Math.PI * 2, true);
+        ctx.stroke();
+    }
+</script>
+
+</body>
+</html>
